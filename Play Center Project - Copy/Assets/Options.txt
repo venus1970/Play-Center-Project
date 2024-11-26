@@ -1,0 +1,28 @@
+20 month,18 month,12 month,22 month
+Jackson,Smith,Williams,Jones
+Scarvey,Chickenpox,Herpes,Influenza
+Venus,Apollo,Zeus,Eros
+Al Capone,Paul Ricca,Tony Accardo,Paolo Antonio Vaccarelli 
+10020,10000,10090,10080
+EKaterina I,Ekaterina II,Nicolas II,Nicolas I
+Five,Three,One,Four
+Tanzania,Nepal,Pakistan,India
+Constantinople,Eridu,Eruk,Babylon
+Four,Three,Two,One
+25 metres,50 metres,60 metres,40 metres
+World Wide Web,World Web Wide,World Web Window,Wide Web World
+Twelve,Fifteen,Ten,Five
+Puma,Horse,Lion,Kangaroo
+Henry VIII,Henry VII,Henry IV,Henry V
+Atlantic Ocean,Pacific Ocean,Indian Ocean,Antarctic Ocean
+Finland,France,Switzerland,Netherlands
+Switzerland,Finland,France,Turkey
+Switzerland,Finland,France,Belgium
+John Lennon,Paul McCartney,George Harrison,Ringo Starr 
+Eight,Seven,Five,Six
+George Washington,Abraham Lincoln,William McKinley,Benjamin Harrison
+Greece,Italy,Germany,Turkey
+Panter,Cheetah,Puma,Tiger
+Africa,Asia,Australia,South America
+Monaco,Vatican City,Liechtenstein,Malta
+

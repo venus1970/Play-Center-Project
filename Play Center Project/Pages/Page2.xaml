@@ -1,0 +1,436 @@
+﻿<Page x:Class="Play_Center_Project.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Play_Center_Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page2">
+
+    <Grid Background="Green" MouseDown="ProfileImage_Click">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <!-- Navigation Buttons -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Black" >
+            <Button x:Name="PrevPage" Content="&lt;&lt; Back to PlayCenter" Height="35" MinWidth="130" Margin="5,5,5,5" Click="PrevPage_Click"/>
+            <Button x:Name="NextPage" Content="&gt;&gt; Play The Game" Height="35" MinWidth="125" Click="NextPage_Click"/>
+
+        </StackPanel>
+        <Button x:Name="ShowDataButton" Content="Aharoni Tzila" FontStyle="Oblique" Background="Black" Foreground="White" Height="37" Width="80" Margin="634,9,86,9" Click="ShowDataButton_Click">
+            <!-- ToolTip with multiline data -->
+            <Button.ToolTip>
+                <ToolTip>
+                    <TextBlock TextWrapping="Wrap">
+                Name: Aharoni Tzila
+                <LineBreak />
+                Age: 45
+                <LineBreak />
+                Hobbies: Coding, Gaming, Reading
+                <LineBreak />
+                Favorite Technology: .NET Framework
+                <LineBreak />
+                Contact: aharonitzila@google.com
+                    </TextBlock>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Image Source="/Images/image__1_-removebg-preview.png" 
+Stretch="Fill" 
+Width="55" 
+RenderTransformOrigin="0.5,0.5" 
+Margin="745,0,5,0" 
+Cursor="Hand" 
+ToolTip="Go back" 
+MouseDown="ProfileImage_Click">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ImageScaleTransform" ScaleX="1" ScaleY="1" />
+            </Image.RenderTransform>
+
+            <Image.Triggers>
+                <!-- MouseEnter trigger to enlarge the image -->
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                              Storyboard.TargetProperty="ScaleX" 
+                              From="1" To="1.5" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                              Storyboard.TargetProperty="ScaleY" 
+                              From="1" To="1.5" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <!-- MouseLeave trigger to return the image to original size -->
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                              Storyboard.TargetProperty="ScaleX" 
+                              From="1.5" To="1" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                              Storyboard.TargetProperty="ScaleY" 
+                              From="1.5" To="1" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+        <!-- Frame for Navigation -->
+        <Frame x:Name="MyFrame" Grid.Row="1" Grid.Column="1" Margin="20" NavigationUIVisibility="Hidden"/>
+
+        <!-- Center Section -->
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Column with Technology Icons -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,30,40,0" Height="324" Width="60">
+
+
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Border.RenderTransform>
+                        <ScaleTransform x:Name="BorderScaleTransform1" ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+                    <Image Source="/Images/c.png" Width="40" Height="40" Cursor="Hand">
+                        <!-- Custom Tooltip with multiline content -->
+                        <Image.ToolTip>
+                            <TextBlock>
+<Run Text="Object-oriented language,"/>
+<LineBreak/>
+<Run Text="meaning that it emphasizes concepts"/>
+<LineBreak/>
+<Run Text="like encapsulation, inheritance, and polymorphism."/>
+
+                            </TextBlock>
+                        </Image.ToolTip>
+
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <Border.Triggers>
+                        <!-- MouseEnter trigger to enlarge the border and image -->
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform1"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform1"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- MouseLeave trigger to return the border and image to original size -->
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform1"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform1"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+                </Border>
+
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Border.RenderTransform>
+                        <ScaleTransform x:Name="BorderScaleTransform2" ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+                    <Image Source="/Images/.net.png" Width="40" Height="40" Cursor="Hand">
+
+                        <!-- Custom Tooltip with multiline content -->
+                        <Image.ToolTip>
+                            <TextBlock>
+        <Run Text=".NET Framework."/>
+        <LineBreak/>
+        <Run Text="NET is a free, open-source framework"/>
+        <LineBreak/>
+        <Run Text="used for building a wide range of"/>
+        <LineBreak/>
+        <Run Text="applications across different platforms."/>
+                            </TextBlock>
+                        </Image.ToolTip>
+
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <Border.Triggers>
+                        <!-- MouseEnter trigger to enlarge the border and image -->
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform2"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform2"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- MouseLeave trigger to return the border and image to original size -->
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform2"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform2"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+                </Border>
+
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Border.RenderTransform>
+                        <ScaleTransform x:Name="BorderScaleTransform3" ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+                    <Image Source="/Images/oop.jpeg" Width="40" Height="40" Cursor="Hand" Stretch="Fill">
+                        <!-- Custom Tooltip with multiline content -->
+                        <Image.ToolTip>
+                            <TextBlock>
+<Run Text="OOP stands for Object-Oriented Programming."/>
+<LineBreak/>
+<Run Text="OOP helps create programs that are modular,"/>
+<LineBreak/>
+<Run Text="easier to maintain. Key Concepts of OOP:"/>
+<LineBreak/>
+<Run Text="Classes and Objects, Encapsulation,"/>
+<LineBreak/>
+<Run Text="Inheritance, Polymorphism, Abstraction."/>
+
+                            </TextBlock>
+                        </Image.ToolTip>
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <Border.Triggers>
+                        <!-- MouseEnter trigger to enlarge the border and image -->
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform3"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform3"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- MouseLeave trigger to return the border and image to original size -->
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform3"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform3"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+                </Border>
+
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Border.RenderTransform>
+                        <ScaleTransform x:Name="BorderScaleTransform4" ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+                    <Image Source="/Images/xaml.jpeg" Width="40" Height="40" Cursor="Hand">
+                        <!-- Custom Tooltip with multiline content -->
+                        <Image.ToolTip>
+                            <TextBlock>
+<Run Text="XAML Technology XAML"/>
+<LineBreak/>
+<Run Text="(Extensible Application Markup Language)."/>
+<LineBreak/>
+<Run Text="XAML is the markup language used in WPF to define"/>
+<LineBreak/>
+<Run Text="the structure and behavior of the UI."/>
+                            </TextBlock>
+                        </Image.ToolTip>
+
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <Border.Triggers>
+                        <!-- MouseEnter trigger to enlarge the border and image -->
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform4"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform4"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- MouseLeave trigger to return the border and image to original size -->
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform4"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform4"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+                </Border>
+
+
+
+
+
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <!-- Apply a RenderTransform to scale the Border -->
+                    <Border.RenderTransform>
+                        <ScaleTransform x:Name="BorderScaleTransform5" ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+
+                    <!-- Image inside the Border -->
+                    <Image Source="/Images/wpf.png" Width="40" Height="40" Cursor="Hand">
+                        <!-- Custom Tooltip with multiline content -->
+                        <Image.ToolTip>
+                            <TextBlock>
+                <Run Text="WPF Framework."/>
+                <LineBreak/>
+                <Run Text="WPF (Windows Presentation Foundation):"/>
+                <LineBreak/>
+                <Run Text="Used to create the graphical user"/>
+                <LineBreak/>
+                <Run Text="interface (GUI) of the application."/>
+                            </TextBlock>
+                        </Image.ToolTip>
+
+                        <!-- Clip the Image into a circle -->
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <!-- Add triggers to scale the Border when hovered -->
+                    <Border.Triggers>
+                        <!-- MouseEnter trigger to enlarge the border and image -->
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform5"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform5"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1" To="1.2" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- MouseLeave trigger to return the border and image to original size -->
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform5"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="BorderScaleTransform5"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1.2" To="1" Duration="0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+                </Border>
+            </StackPanel>
+
+            <!-- Title -->
+            <TextBlock Text="Presents Game" FontSize="30" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="207,10,0,300" Grid.Column="1"/>
+
+
+            <!-- TextBox for Multi-line Input -->
+            <TextBox VerticalAlignment="Top" Margin="70,60,0,0" Width="415" Height="290" 
+              TextWrapping="Wrap" AcceptsReturn="True" 
+              VerticalScrollBarVisibility="Auto" TextAlignment="Justify"
+              HorizontalScrollBarVisibility="Auto"
+              FontSize="16" Foreground="White" Background="Transparent"
+              Text="The player needs to catch falling presents that appear at random positions on the canvas. Each present caught increases the player's score. Presents fall from the top of the screen, and the player moves a net at the bottom (controlled by mouse movement) to catch them.
+ If a present is caught, it disappears and the score increases. If a present reaches the bottom of the screen without being caught, the missed count increases. The game stops when the player has missed more than 20 presents or caught more than 40 presents, with a message box showing the result.
+.  The game ends when the player either wins (scores 40) or loses (misses 20). The game then restarts after the player clicks 'OK' on the message box." 
+                     HorizontalAlignment="Left" Cursor="Pen" BorderBrush="#00000000" Grid.ColumnSpan="2"/>
+            <Border Grid.Column="1" VerticalAlignment="Top" Margin="430,118,10,0" 
+                    BorderBrush="White" BorderThickness="5" CornerRadius="10" Background="Transparent">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="10" BlurRadius="15"/>
+                </Border.Effect>
+                <Image MouseDown="Image_MouseDown" Source="/Images/presimage.png" Width="300" Height="181" Cursor="Hand" ToolTip="Play the Game" Stretch="Fill"/>
+            </Border>
+        </Grid>
+
+
+        <!-- Bottom Section -->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#E2E9E9" Padding="10" Background="Black">
+            <Grid>
+                <!-- Copyright Text -->
+                <TextBlock Margin="10 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" Foreground="White" Text="Copyright © 2024. All rights reserved"/>
+                <TextBlock Margin="10 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12" Foreground="White" Text="Aharoni Tzila"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

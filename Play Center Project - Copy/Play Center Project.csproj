@@ -1,0 +1,314 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>Play_Center_Project</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Presents_Game\**" />
+    <EmbeddedResource Remove="Presents_Game\**" />
+    <None Remove="Presents_Game\**" />
+    <Page Remove="Presents_Game\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="a.jpg" />
+    <None Remove="Assets\Background.png" />
+    <None Remove="Assets\Block-Empty.png" />
+    <None Remove="Assets\Block-I.png" />
+    <None Remove="Assets\Block-J.png" />
+    <None Remove="Assets\Block-L.png" />
+    <None Remove="Assets\Block-O.png" />
+    <None Remove="Assets\Block-S.png" />
+    <None Remove="Assets\Block-T.png" />
+    <None Remove="Assets\Block-Z.png" />
+    <None Remove="Assets\Body.png" />
+    <None Remove="Assets\DeadBody.png" />
+    <None Remove="Assets\DeadHead.png" />
+    <None Remove="Assets\DroidSansMono.ttf" />
+    <None Remove="Assets\Empty.png" />
+    <None Remove="Assets\Food.png" />
+    <None Remove="Assets\Head.png" />
+    <None Remove="Assets\Options.txt" />
+    <None Remove="Assets\pop_sound.mp3" />
+    <None Remove="Assets\Questions.txt" />
+    <None Remove="Assets\TileBlue.png" />
+    <None Remove="Assets\TileCyan.png" />
+    <None Remove="Assets\TileEmpty.png" />
+    <None Remove="Assets\TileGreen.png" />
+    <None Remove="Assets\TileOrange.png" />
+    <None Remove="Assets\TilePurple.png" />
+    <None Remove="Assets\TileRed.png" />
+    <None Remove="Assets\TileYellow.png" />
+    <None Remove="image %281%29.jpg" />
+    <None Remove="Images\.net.png" />
+    <None Remove="Images\api.jpg" />
+    <None Remove="Images\api.png" />
+    <None Remove="Images\background (1).jpg" />
+    <None Remove="Images\background-Image.jpg" />
+    <None Remove="Images\balloon1.png" />
+    <None Remove="Images\balloon2.png" />
+    <None Remove="Images\balloon3.png" />
+    <None Remove="Images\balloon4.png" />
+    <None Remove="Images\balloon5.png" />
+    <None Remove="Images\c.png" />
+    <None Remove="Images\calculator.jpeg" />
+    <None Remove="Images\canvas.png" />
+    <None Remove="Images\car1.png" />
+    <None Remove="Images\car2.png" />
+    <None Remove="Images\car3.png" />
+    <None Remove="Images\car4.png" />
+    <None Remove="Images\car5.png" />
+    <None Remove="Images\car6.png" />
+    <None Remove="Images\click.gif" />
+    <None Remove="Images\download.png" />
+    <None Remove="Images\game.jpeg" />
+    <None Remove="Images\game.png" />
+    <None Remove="Images\image2.jpg" />
+    <None Remove="Images\image3.jpg" />
+    <None Remove="Images\image4.jpg" />
+    <None Remove="Images\image5.jpg" />
+    <None Remove="Images\image6.jpg" />
+    <None Remove="Images\image7.jpg" />
+    <None Remove="Images\image8.jpg" />
+    <None Remove="Images\image9.jpg" />
+    <None Remove="Images\images.png" />
+    <None Remove="Images\json.png" />
+    <None Remove="Images\mvvm1.jpeg" />
+    <None Remove="Images\netLeft.png" />
+    <None Remove="Images\netRight.png" />
+    <None Remove="Images\playerImage.png" />
+    <None Remove="Images\pop_sound.mp3" />
+    <None Remove="Images\powermode1.png" />
+    <None Remove="Images\powermode2.png" />
+    <None Remove="Images\powermode3.png" />
+    <None Remove="Images\powermode4.png" />
+    <None Remove="Images\presentimage.png" />
+    <None Remove="Images\present_01.png" />
+    <None Remove="Images\present_02.png" />
+    <None Remove="Images\present_03.png" />
+    <None Remove="Images\present_04.png" />
+    <None Remove="Images\present_05.png" />
+    <None Remove="Images\present_06.png" />
+    <None Remove="Images\presimage.png" />
+    <None Remove="Images\quiz.jpeg" />
+    <None Remove="Images\snake.png" />
+    <None Remove="Images\snakeimage.png" />
+    <None Remove="Images\star.png" />
+    <None Remove="Images\tac_tic_toe_icon_183167.ico" />
+    <None Remove="Images\tetris.png" />
+    <None Remove="Images\txt.png" />
+    <None Remove="Images\wpf.jpeg" />
+    <None Remove="Images\wpf.png" />
+    <None Remove="Images\xaml.jpeg" />
+    <None Remove="image__1_-removebg-preview.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\car1.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\car2.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\car3.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\car4.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\car5.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\car6.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\powermode1.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\powermode2.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\powermode3.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\powermode4.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\star.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\background %281%29.jpg" />
+    <None Remove="ProjectsWPF\Presents Game\images\background (1) - Copy.jpg" />
+    <None Remove="ProjectsWPF\Presents Game\images\netLeft - Copy.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\netLeft.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\netRight - Copy.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\netRight.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_01 - Copy.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_01.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_02 - Copy.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_02.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_03.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_04.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_05.png" />
+    <None Remove="ProjectsWPF\Presents Game\images\present_06.png" />
+    <None Remove="ProjectsWPF\Car Racing Game WPF\images\playerImage.png" />
+    <None Remove="ProjectsWPF\Currency Converter\Resources\currency.png" />
+    <None Remove="ProjectsWPF\Currency Converter\Resources\currency1.png" />
+    <None Remove="ProjectsWPF\Currency Converter\Resources\dollar.icon.ico" />
+    <None Remove="ProjectsWPF\Quiz\Answers.txt" />
+    <None Remove="ProjectsWPF\Quiz\Options.txt" />
+    <None Remove="ProjectsWPF\Quiz\Questions.txt" />
+    <None Remove="ProjectsWPF\Tetris\Assets\Background.png" />
+    <None Remove="README.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="a.jpg" />
+    <Resource Include="Assets\Background.png" />
+    <Resource Include="Assets\Block-Empty.png" />
+    <Resource Include="Assets\Block-I.png" />
+    <Resource Include="Assets\Block-J.png" />
+    <Resource Include="Assets\Block-L.png" />
+    <Resource Include="Assets\Block-O.png" />
+    <Resource Include="Assets\Block-S.png" />
+    <Resource Include="Assets\Block-T.png" />
+    <Resource Include="Assets\Block-Z.png" />
+    <Resource Include="Assets\Body.png" />
+    <Resource Include="Assets\DeadBody.png" />
+    <Resource Include="Assets\DeadHead.png" />
+    <Resource Include="Assets\DroidSansMono.ttf" />
+    <Resource Include="Assets\Empty.png" />
+    <Resource Include="Assets\Food.png" />
+    <Resource Include="Assets\Head.png" />
+    <Resource Include="Assets\TileBlue.png" />
+    <Resource Include="Assets\TileCyan.png" />
+    <Resource Include="Assets\TileEmpty.png" />
+    <Resource Include="Assets\TileGreen.png" />
+    <Resource Include="Assets\TileOrange.png" />
+    <Resource Include="Assets\TilePurple.png" />
+    <Resource Include="Assets\TileRed.png" />
+    <Resource Include="Assets\TileYellow.png" />
+    <Resource Include="image (1).jpg" />
+    <Resource Include="Images\.net.png" />
+    <Resource Include="Images\api.jpg" />
+    <Resource Include="Images\api.png" />
+    <Resource Include="Images\background (1).jpg" />
+    <Resource Include="Images\background-Image.jpg" />
+    <Resource Include="Images\balloon1.png" />
+    <Resource Include="Images\balloon2.png" />
+    <Resource Include="Images\balloon3.png" />
+    <Resource Include="Images\balloon4.png" />
+    <Resource Include="Images\balloon5.png" />
+    <Resource Include="Images\c.png" />
+    <Resource Include="Images\calculator.jpeg" />
+    <Resource Include="Images\canvas.png" />
+    <Resource Include="Images\car1.png" />
+    <Resource Include="Images\car2.png" />
+    <Resource Include="Images\car3.png" />
+    <Resource Include="Images\car4.png" />
+    <Resource Include="Images\car5.png" />
+    <Resource Include="Images\car6.png" />
+    <Resource Include="Images\click.gif" />
+    <Resource Include="Images\download.png" />
+    <Resource Include="Images\game.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\game.png" />
+    <Resource Include="Images\image2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\image9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\mvvm1.jpeg" />
+    <Resource Include="Images\netLeft.png" />
+    <Resource Include="Images\netRight.png" />
+    <Content Include="Assets\Options.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\pop_sound.mp3" />
+    <Content Include="Assets\Questions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pop_sound.mp3" />
+    <Content Include="Assets\Answers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProjectsWPF\Quiz\Options.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProjectsWPF\Quiz\Questions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\playerImage.png" />
+    <Resource Include="Images\powermode1.png" />
+    <Resource Include="Images\powermode2.png" />
+    <Resource Include="Images\powermode3.png" />
+    <Resource Include="Images\powermode4.png" />
+    <Resource Include="Images\present_01.png" />
+    <Resource Include="Images\present_02.png" />
+    <Resource Include="Images\present_03.png" />
+    <Resource Include="Images\present_04.png" />
+    <Resource Include="Images\present_05.png" />
+    <Resource Include="Images\present_06.png" />
+    <Resource Include="Images\quiz.jpeg" />
+    <Resource Include="Images\images.png" />
+    <Resource Include="Images\json.png" />
+    <Resource Include="Images\presentimage.png" />
+    <Resource Include="Images\presimage.png" />
+    <Resource Include="Images\snake.png" />
+    <Resource Include="Images\snakeimage.png" />
+    <Resource Include="Images\star.png" />
+    <Resource Include="Images\tac_tic_toe_icon_183167.ico" />
+    <Resource Include="Images\tetris.png" />
+    <Resource Include="Images\txt.png" />
+    <Resource Include="Images\wpf.jpeg" />
+    <Resource Include="Images\wpf.png" />
+    <Resource Include="Images\xaml.jpeg" />
+    <Resource Include="image__1_-removebg-preview.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\car1.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\car2.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\car3.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\car4.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\car5.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\car6.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\powermode1.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\powermode2.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\powermode3.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\powermode4.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\star.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\background (1) - Copy.jpg" />
+    <Resource Include="ProjectsWPF\Presents Game\images\background (1).jpg" />
+    <Resource Include="ProjectsWPF\Presents Game\images\netLeft - Copy.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\netLeft.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\netRight - Copy.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\netRight.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_01 - Copy.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_01.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_02 - Copy.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_02.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_03.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_04.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_05.png" />
+    <Resource Include="ProjectsWPF\Presents Game\images\present_06.png" />
+    <Resource Include="ProjectsWPF\Car Racing Game WPF\images\playerImage.png" />
+    <Resource Include="ProjectsWPF\Currency Converter\Resources\currency.png" />
+    <Resource Include="ProjectsWPF\Currency Converter\Resources\currency1.png" />
+    <Resource Include="ProjectsWPF\Currency Converter\Resources\dollar.icon.ico" />
+    <Resource Include="ProjectsWPF\Tetris\Assets\Background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ProjectsWPF\Quiz\Models\" />
+    <Folder Include="SnakeAssets\" />
+    <Folder Include="ProjectsWPF\Calculator\Commands\" />
+  </ItemGroup>
+
+</Project>

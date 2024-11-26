@@ -1,0 +1,181 @@
+﻿<Page x:Class="Play_Center_Project.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Play_Center_Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+
+    <Grid Background="DodgerBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <!-- Navigation Buttons -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Black">
+            <Button x:Name="PrevPage" Content="&lt;&lt; Back to PlayCenter" Height="35" MinWidth="130" Margin="5,5,5,5" Click="PrevPage_Click"/>
+            <Button x:Name="NextPage" Content="&gt;&gt; Play The Game" Height="35" MinWidth="125" Click="NextPage_Click"/>
+        </StackPanel>
+        <Button x:Name="ShowDataButton" Content="Aharoni Tzila" FontStyle="Oblique" Background="Black" Foreground="White" Height="37" Width="80" Margin="634,9,86,9" Click="ShowDataButton_Click">
+            <!-- ToolTip with multiline data -->
+            <Button.ToolTip>
+                <ToolTip>
+                    <TextBlock TextWrapping="Wrap">
+                Name: Aharoni Tzila
+                <LineBreak />
+                Age: 45
+                <LineBreak />
+                Hobbies: Coding, Gaming, Reading
+                <LineBreak />
+                Favorite Technology: .NET Framework
+                <LineBreak />
+                Contact: aharonitzila@google.com
+                    </TextBlock>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Image Source="/image__1_-removebg-preview.png" Stretch="Fill" Width="55" 
+       RenderTransformOrigin="0.5,0.5" Margin="745,0,5,0" 
+       Cursor="Hand" ToolTip="Go Back" MouseDown="ProfileImage_Click">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ImageScaleTransform" ScaleX="1" ScaleY="1" />
+            </Image.RenderTransform>
+
+            <Image.Triggers>
+                <!-- MouseEnter trigger to enlarge the image -->
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Animation for ScaleX -->
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                                     Storyboard.TargetProperty="ScaleX" 
+                                     From="1" To="1.5" Duration="0:0:0.2" />
+                            <!-- Animation for ScaleY -->
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                                     Storyboard.TargetProperty="ScaleY" 
+                                     From="1" To="1.5" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <!-- MouseLeave trigger to return the image to its original size -->
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Animation for ScaleX -->
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                                     Storyboard.TargetProperty="ScaleX" 
+                                     From="1.5" To="1" Duration="0:0:0.2" />
+                            <!-- Animation for ScaleY -->
+                            <DoubleAnimation Storyboard.TargetName="ImageScaleTransform" 
+                                     Storyboard.TargetProperty="ScaleY" 
+                                     From="1.5" To="1" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+
+        <Frame x:Name="MyFrame" Grid.Row="1" Margin="20" NavigationUIVisibility="Hidden"/>
+
+        <!-- Center Section -->
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Left Column for Icons -->
+                <ColumnDefinition Width="*"/>
+                <!-- Center Column -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Column with Technology Icons -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0" Height="324" Width="60">
+
+                
+                
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Image Source="/Images/c.png" Width="40" Height="40" Cursor="Hand" ToolTip="object-oriented language, meaning that it emphasizes concepts like encapsulation, inheritance, and polymorphism.">
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Image Source="/Images/.net.png" Width="40" Height="40" Cursor="Hand" ToolTip=".NET Framework.NET is a free, open-source framework used for building a wide range of
+applications across different platforms.">
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Image Source="/Images/xaml.jpeg" Width="40" Height="40" Cursor="Hand">
+                        <!-- Custom Tooltip with multiline content -->
+                        <Image.ToolTip>
+                            <TextBlock>
+<Run Text="XAML Technology XAML"/>
+<LineBreak/>
+<Run Text="(Extensible Application Markup Language)."/>
+<LineBreak/>
+<Run Text="XAML is the markup language used in WPF to define"/>
+<LineBreak/>
+<Run Text="the structure and behavior of the UI."/>
+                            </TextBlock>
+                        </Image.ToolTip>
+
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Image Source="/Images/wpf.png" Width="40" Height="40" Cursor="Hand" ToolTip="WPF Framework. WPF (Windows Presentation Foundation). This is the main technology used for building the user interface (UI)">
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+
+                </Border>
+                <Border BorderBrush="Fuchsia" BorderThickness="2" CornerRadius="20" Width="44" Height="44" Margin="5">
+                    <Image Source="/Images/mvvm1.jpeg" Width="40" Height="40" Cursor="Hand" ToolTip="MVVM (Model-View-ViewModel): Design pattern for separating UI and logic, using data binding and commands.">
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+            </StackPanel>
+            <!-- Title -->
+            <TextBlock Text="Calculator" FontSize="30" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="280,47,0,263" Grid.ColumnSpan="2"/>
+
+            <!-- TextBox for Multi-line Input -->
+            <TextBox Grid.Column="1" VerticalAlignment="Top" Margin="16,118,334,0" Width="400" Height="222" 
+                     TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Justify"
+                     VerticalScrollBarVisibility="Auto" 
+                     HorizontalScrollBarVisibility="Auto"
+                     FontSize="16" Foreground="White" Background="Transparent"
+                     Text="Calculator Game: A fun and interactive game that challenges players to solve mathematical problems using a virtual calculator. Players are presented with various arithmetic operations and puzzles that they must solve correctly within a time limit. The game combines educational elements with entertainment, allowing players to improve their calculation skills and problem-solving abilities in a competitive and engaging way." Cursor="Pen" BorderBrush="#00000000"/>
+            <Border Grid.Column="1" VerticalAlignment="Top" Margin="430,134,10,0" 
+                    BorderBrush="White" BorderThickness="5" CornerRadius="10" Background="Transparent">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="10" BlurRadius="15"/>
+                </Border.Effect>
+                <Image MouseLeftButtonDown="CalculatorImage_Click" Source="/Images/calculator.jpeg" Width="300" Height="181" Cursor="Hand" ToolTip="Play the Game" Stretch="Fill"/>
+            </Border>
+        </Grid>
+
+        <!-- Bottom Section -->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 2 0 0" BorderBrush="#E2E9E9" Padding="10" Background="Black">
+            <Grid>
+                <!-- Copyright Text -->
+                <TextBlock Margin="10 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" Foreground="White" Text="Copyright © 2024. All rights reserved"/>
+                <TextBlock Margin="10 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12" Foreground="White" Text="Aharoni Tzila"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>
