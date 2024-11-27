@@ -112,7 +112,7 @@ namespace Presents_Game
             if (missed > 20)
             {
                 gameTimer.Stop();
-                MessageBox.Show("You Lost!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again");
+                MessageBox.Show("You Lost!!!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again");
                 ResetGame();
             }
 
