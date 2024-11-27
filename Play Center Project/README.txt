@@ -27,7 +27,7 @@ Visual Studio: It's recommended to use Visual Studio with the WPF development wo
 Getting Started:
 1. Clone the Repository:
 
-git clone https://github.com/Venus1970/Play-Center-Project.git
+git clone https://https://github.com/venus1970/Play-Center-Project/tree/master/Play%20Center%20Project
 cd Play-Center-Project
 
 2. Open the Project:
@@ -67,7 +67,7 @@ Open a pull request.
 Contact:
 Developer: Aharoni Tzila
 Email: zilaalkobi@gmail.com
-GitHub: https://github.com/Venus1970
+GitHub: https://github.com/venus1970
 Notes for the Readme:
 Images and Resources: The Images/ folder should contain all the images referenced in the XAML file. 
 
